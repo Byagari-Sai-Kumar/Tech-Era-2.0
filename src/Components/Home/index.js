@@ -2,17 +2,7 @@ import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
 import CourseItem from '../CourseListItem'
-import {
-  HomeBgContainer,
-  HomeSuccessContainer,
-  CoursesHeading,
-  CoursesUnorderedListContainer,
-  HomeFailureContainer,
-  FailureImage,
-  FailureHeading,
-  FailureDescription,
-  RetryButton,
-} from './styledComponents'
+import './index.css'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -61,31 +51,36 @@ class Home extends Component {
     const {courseList} = this.state
 
     return (
-      <HomeSuccessContainer>
-        <CoursesHeading>Courses</CoursesHeading>
-        <CoursesUnorderedListContainer>
+      <div className="homeSuccessContainer">
+        <h1 className="coursesHeading">Courses</h1>
+        <ul className="coursesUnorderedListContainer">
           {courseList.map(eachCourse => (
             <CourseItem key={eachCourse.id} courseData={eachCourse} />
           ))}
-        </CoursesUnorderedListContainer>
-      </HomeSuccessContainer>
+        </ul>
+      </div>
     )
   }
 
   renderFailure = () => (
-    <HomeFailureContainer>
-      <FailureImage
+    <div className="homeFailureContainer">
+      <img
+        className="failureImage"
         src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
         alt="failure view"
       />
-      <FailureHeading>Oops! Something Went Wrong</FailureHeading>
-      <FailureDescription>
+      <h1 className="failureHeading">Oops! Something Went Wrong</h1>
+      <p className="failureDescription">
         We cannot seem to find the page you are looking for.
-      </FailureDescription>
-      <RetryButton type="button" onClick={this.getCourseListData}>
+      </p>
+      <button
+        className="retryButton"
+        type="button"
+        onClick={this.getCourseListData}
+      >
         Retry
-      </RetryButton>
-    </HomeFailureContainer>
+      </button>
+    </div>
   )
 
   renderHomeViews = () => {
@@ -105,10 +100,10 @@ class Home extends Component {
 
   render() {
     return (
-      <HomeBgContainer>
+      <div className="homeBgContainer">
         <Header />
         {this.renderHomeViews()}
-      </HomeBgContainer>
+      </div>
     )
   }
 }

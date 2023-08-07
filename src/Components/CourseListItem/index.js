@@ -1,21 +1,17 @@
-import {
-  CourseListItem,
-  CourseLinkItem,
-  CourseImage,
-  CourseName,
-} from './styledComponents'
+import './index.css'
+import {CourseLinkItem} from './styledComponents'
 
 const CourseItem = props => {
   const {courseData} = props
   const {id, name, logoUrl} = courseData
 
   return (
-    <CourseListItem>
+    <li className="courseListItem">
       <CourseLinkItem to={`/courses/${id}`}>
-        <CourseImage src={logoUrl} alt={name} />
-        <CourseName>{name}</CourseName>
+        <img className="courseImage" src={logoUrl} alt={name} />
+        <p className="courseName">{name}</p>
       </CourseLinkItem>
-    </CourseListItem>
+    </li>
   )
 }
 

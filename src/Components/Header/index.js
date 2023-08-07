@@ -1,14 +1,16 @@
-import {HeaderContainer, LinkItem, WebsiteLogo} from './styledComponents'
+import {LinkItem} from './styledComponents'
+import './index.css'
 
 const Header = () => (
-  <HeaderContainer>
+  <div className="headerContainer">
     <LinkItem to="/">
-      <WebsiteLogo
+      <img
+        className="websiteLogo"
         src="https://assets.ccbp.in/frontend/react-js/tech-era/website-logo-img.png"
         alt="website logo"
       />
     </LinkItem>
-  </HeaderContainer>
+  </div>
 )
 
 export default Header

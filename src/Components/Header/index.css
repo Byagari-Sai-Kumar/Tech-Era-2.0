@@ -1,0 +1,14 @@
+.headerContainer {
+  height: 10vh;
+  width: 100%;
+  background-color: #f1f5f9;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.websiteLogo {
+  height: 70%;
+  padding-left: 20px;
+  cursor: pointer;
+}

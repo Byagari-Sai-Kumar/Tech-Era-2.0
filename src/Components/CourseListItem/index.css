@@ -1,0 +1,16 @@
+.courseListItem {
+  width: 100px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.courseImage {
+  width: 50%;
+}
+
+.courseName {
+  font-size: 16px;
+  color: #475569;
+  width: 50%;
+  padding-left: 10px;
+}

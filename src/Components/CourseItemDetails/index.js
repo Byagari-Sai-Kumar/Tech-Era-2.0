@@ -1,19 +1,7 @@
 import {Component} from 'react'
 import Loader from 'react-loader-spinner'
 import Header from '../Header'
-import {
-  CourseDetailerBgContainer,
-  CourseDetailsSuccessContainer,
-  CardContainer,
-  CourseImage,
-  DescriptionContainer,
-  Heading,
-  Description,
-  FailureImage,
-  FailureHeading,
-  FailureDescription,
-  RetryButton,
-} from './styledComponents'
+import './index.css'
 
 const apiStatusConstants = {
   initial: 'INITIAL',
@@ -69,29 +57,34 @@ class CourseItemDetails extends Component {
     const {name, imageUrl, description} = courseDetails
 
     return (
-      <CardContainer>
-        <CourseImage src={imageUrl} alt={name} />
-        <DescriptionContainer>
-          <Heading>{name}</Heading>
-          <Description>{description}</Description>
-        </DescriptionContainer>
-      </CardContainer>
+      <div className="cardContainer">
+        <img className="courseImage" src={imageUrl} alt={name} />
+        <div className="descriptionContainer">
+          <h1 className="heading">{name}</h1>
+          <p className="description">{description}</p>
+        </div>
+      </div>
     )
   }
 
   renderFailure = () => (
     <>
-      <FailureImage
+      <img
+        className="failureImage"
         src="https://assets.ccbp.in/frontend/react-js/tech-era/failure-img.png"
         alt="failure view"
       />
-      <FailureHeading>Oops! Something Went Wrong</FailureHeading>
-      <FailureDescription>
+      <h1 className="failureHeading">Oops! Something Went Wrong</h1>
+      <p className="failureDescription">
         We cannot seem to find the page you are looking for.
-      </FailureDescription>
-      <RetryButton type="button" onClick={this.getCourseDetailsData}>
+      </p>
+      <button
+        className="retryButton"
+        type="button"
+        onClick={this.getCourseDetailsData}
+      >
         Retry
-      </RetryButton>
+      </button>
     </>
   )
 
@@ -112,12 +105,12 @@ class CourseItemDetails extends Component {
 
   render() {
     return (
-      <CourseDetailerBgContainer>
+      <div className="courseDetailerBgContainer">
         <Header />
-        <CourseDetailsSuccessContainer>
+        <div className="courseDetailsSuccessContainer">
           {this.renderCourseDetailsView()}
-        </CourseDetailsSuccessContainer>
-      </CourseDetailerBgContainer>
+        </div>
+      </div>
     )
   }
 }

@@ -1,26 +1,21 @@
 import Header from '../Header'
-import {
-  HomeBgContainer,
-  HomeSuccessContainer,
-  FailureImage,
-  FailureHeading,
-  FailureDescription,
-} from './styledComponents'
+import './index.css'
 
 const NotFound = () => (
-  <HomeBgContainer>
+  <div className="homeBgContainer">
     <Header />
-    <HomeSuccessContainer>
-      <FailureImage
+    <div className="homeSuccessContainer">
+      <img
+        className="failureImage"
         src="https://assets.ccbp.in/frontend/react-js/tech-era/not-found-img.png"
         alt="not found"
       />
-      <FailureHeading>Page Not Found</FailureHeading>
-      <FailureDescription>
+      <h1 className="failureHeading">Page Not Found</h1>
+      <p className="failureDescription">
         We are sorry, the page you are requested could not be found.
-      </FailureDescription>
-    </HomeSuccessContainer>
-  </HomeBgContainer>
+      </p>
+    </div>
+  </div>
 )
 
 export default NotFound
